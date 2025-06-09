@@ -1,0 +1,47 @@
+{
+  "name": "buildmodule",
+  "displayName": "Build Module",
+  "description": "Connect to IBM i via SSH from context menu",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "activationEvents": [
+    "onCommand:buildmodule.buildNewModule"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "buildmodule.buildNewModule",
+        "title": "Build New Module"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "buildmodule.buildNewModule",
+          "when": "resourceLangId != ''",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/ssh2": "^1.15.5",
+    "@types/vscode": "^1.70.0",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.8.3",
+    "webpack": "^5.99.0",
+    "webpack-cli": "^6.0.0"
+  },
+  "dependencies": {
+    "ssh2": "^1.13.0"
+  }
+}
