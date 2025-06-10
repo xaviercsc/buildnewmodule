@@ -8,7 +8,7 @@ Store profiles locally in sshProfiles.json
 
 Secure password entry for each session
 
-Read remote JSON (e.g., devJSON.json) to extract parameters
+Read remote JSON (e.g., devEnv.json) to extract parameters
 
 Replace placeholders in a user-defined command (&1, &2, &3)
 
@@ -38,7 +38,7 @@ The extension will:
 
 Connect to the remote system
 
-Read /home/XMJSCPTC/src/devJSON.json
+Read ./src/devEnv.json
 
 Replace &1, &2, and &3 with values library, dtaara, and value respectively
 
@@ -51,7 +51,7 @@ The IBM i SSH Output channel
 A new terminal tab named IBM i Command Log
 
 🗂 JSON Format
-Ensure that the JSON file on the remote system (/home/XMJSCPTC/src/devJSON.json) has the following structure:
+Ensure that the JSON file on the remote system (./src/devEnv.json) has the following structure:
 
 json
 Copy
