@@ -171,7 +171,7 @@ export function activate(context: vscode.ExtensionContext) {
       conn.on('ready', () => {
         vscode.window.showInformationMessage(`Connected to ${profile.host} as ${profile.username}`);
 
-        const remoteJsonPath = '/home/XMJSCPTC/src/devJSON.json';
+        const remoteJsonPath = './src/devEnv.json';
         conn.exec(`cat ${remoteJsonPath}`, (err, stream) => {
           if (err) {
             vscode.window.showErrorMessage('Error reading remote JSON file: ' + err.message);
